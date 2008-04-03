@@ -1,6 +1,8 @@
 require 'find'
 require 'coderay'
-require 'sinatra'
+
+# We use our own version of codebutler, since we have to modify it
+require 'codebutler/sinatra'
 
 module CodeButler
   
