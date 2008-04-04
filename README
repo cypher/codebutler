@@ -1,6 +1,7 @@
 = CodeButler
 
 * http://rubyforge.org/projects/codebutler/
+* http://github.com/cypher/codebutler/tree/master
 
 == DESCRIPTION:
 
@@ -23,6 +24,7 @@ gem install codebutler
 (The MIT License)
 
 Copyright (c) 2008 Markus Prinz
+
 Sinatra is Copyright (c) 2007 Blake Mizerany
 
 Permission is hereby granted, free of charge, to any person obtaining

@@ -17,7 +17,8 @@ module CodeButler
   }
   
   # Ignore all command line arguments except -p
-  # Clears ARGV to prevent sinatra from parsing
+  #
+  # Also clears ARGV to prevent sinatra from parsing
   def self.clean_argv
     if ARGV.include? "-h"
       puts <<-HELP
