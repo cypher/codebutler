@@ -2,6 +2,10 @@
 #
 #  Created by Markus Prinz on 2008-4-3.
 #  Copyright (c) 2008. All rights reserved.
+#
+# Available options:
+#   -p port
+#   -h
 
 require 'rubygems'
 require 'codebutler'

@@ -15,8 +15,29 @@ module CodeButler
     '.rhtml'  => :rhtml,    
   }
   
+  # Ignore all command line arguments except -p
+  # Clears ARGV to prevent sinatra from parsing
+  def self.clean_argv
+    if ARGV.include? "-h"
+      puts <<-HELP
+      Supported Arguments:
+        -h        Print help (You're looking at it)
+        -p port   Start the webserver on the specified port
+      HELP
+      exit
+    elsif ARGV.include? "-p" && ARGV[ARGV.index("-p") + 1] =~ /^[0-9]+$/
+      port = ARGV[ARGV.index("-p") + 1]
+      ARGV.clear
+      ARGV.unshift ['-p', port.to_s]
+    else
+      ARGV.clear
+    end        
+  end
+  
   # Scan the current working directory for files, and serve them on localhost
   def self.serve
+    clean_argv
+    
     # Create a regex that matches all supported file endings
     regex = Regexp.new("(#{SUPPORTED_LANGUAGES.keys.map{|key| Regexp.escape(key)}.join('|')})$")
     
