@@ -25,7 +25,7 @@ module CodeButler
         -p port   Start the webserver on the specified port
       HELP
       exit
-    elsif ARGV.include? "-p" && ARGV[ARGV.index("-p") + 1] =~ /^[0-9]+$/
+    elsif ARGV.include?("-p") && ARGV[ARGV.index("-p") + 1] =~ /^[0-9]+$/
       port = ARGV[ARGV.index("-p") + 1]
       ARGV.clear
       ARGV.unshift ['-p', port.to_s]
