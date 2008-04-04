@@ -1,5 +1,6 @@
 require 'find'
 require 'coderay'
+require 'uri'
 
 # We bring our own version of sinatra since it's not available as a gem yet
 require 'codebutler/sinatra'
@@ -51,8 +52,8 @@ module CodeButler
         file_list << relative_path
         
         # use Sinatra for easy hosting
-        # We need to escape the path to catch names like "c++test.rb"
-        get(Regexp.escape(relative_path)) do
+        # We need to escape the path to catch names like "c++test.rb" and spaces
+        get(Regexp.escape(URI.escape(relative_path))) do
           CodeRay.scan(File.readlines(path).join, SUPPORTED_LANGUAGES[match[1]]).div
         end
       end
