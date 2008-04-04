@@ -1,6 +1,6 @@
 = CodeButler
 
-* http://github.com/cypher/codebutler/tree/master
+* http://rubyforge.org/projects/codebutler/
 
 == DESCRIPTION:
 
@@ -12,11 +12,11 @@ CodeButler scans a given directory for supported sourcecode, and then serves the
 * mongrel >= 1.0.1
 * rack >= 0.2.0
 
-Since a version of Sinatra is required that is not yet available as a gem, it is included in CodeButler itself
+Since a version of Sinatra is required that is not yet available as a gem, it is included with CodeButler for now
 
 == INSTALL:
 
-gem install codebutler (once the rubyforge project is approved)
+gem install codebutler
 
 == LICENSE:
 
