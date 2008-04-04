@@ -30,7 +30,8 @@ module CodeButler
         file_list << relative_path
         
         # use Sinatra for easy hosting
-        get(relative_path) do
+        # We need to escape the path to catch names like "c++test.rb"
+        get(Regexp.escape(relative_path)) do
           CodeRay.scan(File.readlines(path).join, SUPPORTED_LANGUAGES[match[1]]).div
         end
       end
