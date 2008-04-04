@@ -1,7 +1,7 @@
 require 'find'
 require 'coderay'
 
-# We use our own version of codebutler, since we have to modify it
+# We bring our own version of sinatra since it's not available as a gem yet
 require 'codebutler/sinatra'
 
 module CodeButler
