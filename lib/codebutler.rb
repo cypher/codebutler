@@ -1,9 +1,7 @@
-require 'find'
+require 'sinatra'
 require 'coderay'
+require 'find'
 require 'uri'
-
-# We bring our own version of sinatra since it's not available as a gem yet
-require 'codebutler/sinatra'
 
 module CodeButler
   
